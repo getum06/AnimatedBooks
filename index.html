@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pikachu &amp; Charizard's Big Race</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Floating background decorations (aria-hidden so screen readers skip them) -->
+  <div class="bg-decor" aria-hidden="true">
+    <span class="float-el f1">⚡</span>
+    <span class="float-el f2">🌟</span>
+    <span class="float-el f3">⚡</span>
+    <span class="float-el f4">✨</span>
+    <span class="float-el f5">🔥</span>
+    <span class="float-el f6">⭐</span>
+  </div>
+
+  <main class="page-wrapper">
+
+    <!-- ── Book Header ── -->
+    <header class="book-header">
+      <span class="lightning-deco" aria-hidden="true">⚡</span>
+      <h1 class="book-title">Pikachu &amp; Charizard's Big Race</h1>
+      <span class="lightning-deco" aria-hidden="true">⚡</span>
+    </header>
+
+    <!-- ── Progress Dots ── -->
+    <div class="progress-dots" id="progress-dots" aria-hidden="true"></div>
+
+    <!-- ── Storybook Card ── -->
+    <div class="storybook-card">
+      <!-- anim-clip strictly contains the slide animation so it never spills outside the card -->
+      <div class="anim-clip">
+      <div class="scene-inner" id="scene-inner">
+
+        <h2 class="scene-title" id="scene-title"></h2>
+
+        <!-- Image area: shows actual image when loaded, animated placeholder otherwise -->
+        <div class="image-frame" id="image-frame">
+          <img class="scene-image hidden" id="scene-image" src="" alt="" draggable="false" />
+          <div class="img-placeholder" id="img-placeholder">
+            <span class="ph-emoji" id="ph-emoji">🌟</span>
+            <span class="ph-text" id="ph-text">Loading…</span>
+          </div>
+        </div>
+
+        <!-- Story text -->
+        <p class="scene-text" id="scene-text"></p>
+
+        <!-- Character dialogue bubble -->
+        <div class="speech-bubble">
+          <span class="bubble-icon" aria-hidden="true">💬</span>
+          <p class="bubble-text" id="scene-dialogue"></p>
+        </div>
+
+      </div><!-- /.scene-inner -->
+      </div><!-- /.anim-clip -->
+    </div>
+
+    <!-- ── Navigation Controls ── -->
+    <nav class="controls" aria-label="Story navigation">
+      <button class="btn btn-back" id="btn-back" aria-label="Go to previous scene">
+        ◀ Back
+      </button>
+      <span class="scene-counter" id="scene-counter" role="status" aria-live="polite">
+        Scene 1 of 7
+      </span>
+      <button class="btn btn-next" id="btn-next" aria-label="Go to next scene">
+        Next ▶
+      </button>
+    </nav>
+
+    <p class="keyboard-hint" aria-hidden="true">⌨️ Use ← → arrow keys to flip pages</p>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
